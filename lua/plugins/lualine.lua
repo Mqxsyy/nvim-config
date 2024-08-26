@@ -4,7 +4,7 @@ return {
 	opts = {
 		options = {
 			-- theme = "dracula",
-		  theme = "tokyonight-night"
-    },
+			theme = "tokyonight-night",
+		},
 	},
 }
