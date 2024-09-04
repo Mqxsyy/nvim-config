@@ -6,7 +6,14 @@ return {
 		null_ls.setup({
 			sources = {
 				null_ls.builtins.formatting.stylua,
-				null_ls.builtins.formatting.biome,
+				null_ls.builtins.formatting.biome.with({
+					args = {
+						"check",
+						"--write",
+						"--skip-errors",
+						"--stdin-file-path=$FILENAME",
+					},
+				}),
 			},
 		})
 
