@@ -25,3 +25,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
         })
     end,
 })
+
+local map = vim.keymap.set
+map("i", "<C-h>", "<Left>", {})
+map("i", "<C-j>", "<Down>", {})
+map("i", "<C-k>", "<Up>", {})
+map("i", "<C-l>", "<Right>", {})
