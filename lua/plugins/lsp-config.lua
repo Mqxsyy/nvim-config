@@ -34,6 +34,18 @@ return {
 
 			require("lspconfig").tsserver.setup({
 				capabilities = capabilities,
+				on_attach = function(_, bufnr)
+					vim.api.nvim_create_autocmd("BufWritePre", {
+						buffer = bufnr,
+						callback = function()
+							local params = {
+								command = "_typescript.organizeImports",
+								arguments = { vim.api.nvim_buf_get_name(bufnr) },
+							}
+							vim.lsp.buf.execute_command(params)
+						end,
+					})
+				end,
 			})
 
 			require("lspconfig").biome.setup({
