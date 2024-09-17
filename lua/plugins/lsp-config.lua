@@ -12,7 +12,7 @@ return {
                 ensure_installed = {
                     "lua_ls",
                     "luau_lsp",
-                    "tsserver",
+                    "ts_ls",
 
                     "biome",
                 },
@@ -32,7 +32,7 @@ return {
                 capabilities = capabilities,
             })
 
-            require("lspconfig").tsserver.setup({
+            require("lspconfig").ts_ls.setup({
                 capabilities = capabilities,
                 on_attach = function(_, bufnr)
                     vim.api.nvim_create_autocmd("BufWritePre", {
