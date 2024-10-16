@@ -13,6 +13,7 @@ return {
                     "lua_ls",
                     "luau_lsp",
                     "ts_ls",
+                    "rust_analyzer",
 
                     "biome",
                 },
