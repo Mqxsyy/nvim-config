@@ -1,7 +1,7 @@
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=4")
-vim.cmd("set softtabstop=4")
-vim.cmd("set shiftwidth=4")
+vim.cmd "set expandtab"
+vim.cmd "set tabstop=4"
+vim.cmd "set softtabstop=4"
+vim.cmd "set shiftwidth=4"
 
 vim.g.mapleader = " "
 
@@ -20,7 +20,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.api.nvim_create_autocmd("BufWritePre", {
             buffer = args.buf,
             callback = function()
-                vim.lsp.buf.format({ async = false, id = args.data.client_id })
+                vim.lsp.buf.format { async = false, id = args.data.client_id }
             end,
         })
     end,
@@ -32,5 +32,5 @@ map("i", "<C-j>", "<Down>", {})
 map("i", "<C-k>", "<Up>", {})
 map("i", "<C-l>", "<Right>", {})
 
-vim.cmd("cnoreabbrev W w")
-vim.cmd("cnoreabbrev Wqa wqa")
+vim.cmd "cnoreabbrev W w"
+vim.cmd "cnoreabbrev Wqa wqa"

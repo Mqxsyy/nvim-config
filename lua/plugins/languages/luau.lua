@@ -1,17 +1,17 @@
 local function rojo_project()
     return vim.fs.root(0, function(name)
-        return name:match("%.project.json$")
+        return name:match "%.project.json$"
     end)
 end
 
 if rojo_project() then
-    vim.filetype.add({
+    vim.filetype.add {
         extension = {
             lua = function(path)
-                return path:match(".nvim.lua$") and "lua" or "luau"
+                return path:match ".nvim.lua$" and "lua" or "luau"
             end,
         },
-    })
+    }
 end
 
 return {
@@ -20,7 +20,7 @@ return {
         "nvim-lua/plenary.nvim",
     },
     config = function()
-        require("luau-lsp").setup({
+        require("luau-lsp").setup {
             platform = {
                 type = "roblox",
             },
@@ -52,6 +52,6 @@ return {
                     },
                 },
             },
-        })
+        }
     end,
 }

@@ -1,8 +1,8 @@
 return {
     "goolord/alpha-nvim",
     config = function()
-        local alpha = require("alpha")
-        local dashboard = require("alpha.themes.dashboard")
+        local alpha = require "alpha"
+        local dashboard = require "alpha.themes.dashboard"
 
         dashboard.section.header.opts.hl = "Identifier"
         dashboard.section.header.val = {
