@@ -26,6 +26,19 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "gdshader",
+    callback = function()
+        vim.lsp.start {
+            name = "gdshader-lsp",
+            cmd = {
+                "/home/user/.config/nvim/bin/gdshader-lsp",
+            },
+            capabilities = require("lsp").create_capabilities(),
+        }
+    end,
+})
+
 local map = vim.keymap.set
 map("i", "<C-h>", "<Left>", {})
 map("i", "<C-j>", "<Down>", {})
