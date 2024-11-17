@@ -28,7 +28,6 @@ return {
             require("lspconfig").lua_ls.setup(capabilities)
             require("lspconfig").biome.setup(capabilities)
             require("lspconfig").gdscript.setup(capabilities)
-            require("lspconfig").jdtls.setup(capabilities)
 
             require("lspconfig").ts_ls.setup {
                 capabilities = capabilities,
