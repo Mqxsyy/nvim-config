@@ -4,6 +4,20 @@ vim.cmd "set softtabstop=4"
 vim.cmd "set shiftwidth=4"
 vim.cmd "set scrolloff=10"
 
+vim.cmd "set clipboard+=unnamedplus"
+vim.g.clipboard = {
+	name = "WslClipboard",
+	copy = {
+		["+"] = "clip.exe",
+		["*"] = "clip.exe",
+	},
+	paste = {
+		["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+		["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+	},
+	cache_enabled = 0,
+}
+
 vim.g.mapleader = " "
 
 vim.opt.number = true
