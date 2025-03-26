@@ -1,4 +1,4 @@
-local findBiomeConfig = require "../findFiles/findBiomeConfig"
+local findBiomeConfig = require "../utils/findBiomeConfig"
 
 return {
 	"nvimtools/none-ls.nvim",
@@ -25,10 +25,6 @@ return {
 			table.insert(sources, null_ls.builtins.formatting.prettierd)
 		end
 
-		null_ls.setup {
-			sources = sources,
-		}
-
-		vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format, {})
+		null_ls.setup { sources = sources }
 	end,
 }
