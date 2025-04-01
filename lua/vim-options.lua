@@ -15,6 +15,8 @@ vim.g.mapleader = " "
 vim.opt.number = true
 vim.o.relativenumber = true
 
+vim.diagnostic.config { virtual_text = true }
+
 vim.cmd "set clipboard+=unnamedplus"
 vim.g.clipboard = {
     name = "WslClipboard",
