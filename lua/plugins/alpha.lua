@@ -13,7 +13,9 @@ return {
                 { type = "padding", val = 4 },
                 {
                     type = "terminal",
-                    command = "lua " .. debug.getinfo(1, "S").source:match "@?(.*/)" .. "animations/kitty.lua",
+                    command = "lua "
+                        .. debug.getinfo(1, "S").source:match "@?(.*/)"
+                        .. "animations/animationPlayer.lua",
                     width = 48,
                     height = 24,
                     opts = {
